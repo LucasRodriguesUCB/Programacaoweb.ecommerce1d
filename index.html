@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1D World Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>1D World Store</h1>
+        <p>Sua loja de produtos inspirados no One Direction.</p>
+        <button id="botaoSom" onclick="alternarMusica()">🔊 Tocar música</button>
+        <audio id="musica" src="What Makes You Beautiful.mp3"></audio>
+    </header>
+
+    <main>
+        <div class="filtros">
+            <input type="text" id="busca" placeholder="Pesquisar produto pelo nome..." oninput="mostrarProdutos()">
+            <select id="categoria" onchange="mostrarProdutos()">
+                <option value="Todos">Todas as categorias</option>
+                <option>Vestuário</option>
+                <option>Acessórios</option>
+                <option>Colecionáveis</option>
+                <option>Decoração</option>
+            </select>
+        </div>
+
+        <div class="loja">
+            <section>
+                <h2>Produtos</h2>
+                <div class="produtos" id="grade"></div>
+            </section>
+
+            <aside class="carrinho">
+                <h2>Carrinho</h2>
+                <div id="itens"></div>
+                <div id="resumo"></div>
+                <button class="finalizar" onclick="finalizar()">Finalizar compra</button>
+            </aside>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
